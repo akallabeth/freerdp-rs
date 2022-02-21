@@ -18,6 +18,11 @@ fn main() {
     // the resulting bindings.
     let mut builder = bindgen::Builder::default();
 
+    builder = builder.opaque_type("std.*");
+    builder = builder.blacklist_item("FP.*");
+    builder = builder.blacklist_type("FP.*");
+    builder = builder.blacklist_function("FP.*");
+
     let header_file = out_path.join("wrapper.h");
     let mut header = File::create(&header_file).expect(ferr);
     writeln!(&mut header, "").expect(ferr);

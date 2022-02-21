@@ -7,8 +7,8 @@ use std::fs::File;
 use std::io::Write;
 
 fn main() {
-    let library = pkg_config::probe_library("freerdp-server-shadow3")
-        .expect("pkg-config could not find freerdp-server-shadow3. Try setting PKG_CONFIG_PATH if not installed in system directories");
+    let library = pkg_config::probe_library("freerdp-shadow3")
+        .expect("pkg-config could not find freerdp-shadow3. Try setting PKG_CONFIG_PATH if not installed in system directories");
 
     let ferr = "Failed to write wrapper.h";
     let out_path = PathBuf::from(env::var("OUT_DIR").expect("Environment variable OUT_DIR not set"));
@@ -30,7 +30,7 @@ fn main() {
         let spath = dpath.to_string();
         builder = builder.clang_args(&["-I", &spath]);
 
-        if !spath.contains("freerdp-server-shadow3") {
+        if !spath.contains("freerdp-shadow3") {
             continue;
         }
 

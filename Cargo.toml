@@ -1,2 +1,2 @@
 [workspace]
-members = [ "rdtk", "uwac", "winpr", "winpr-tools", "freerdp", "freerdp-client", "freerdp-server", "freerdp-server-proxy", "freerdp-server-shadow", "freerdp-server-shadow-subsystem" ]
+members = [ "rdtk", "uwac", "winpr", "winpr-tools", "freerdp", "freerdp-client", "freerdp-server", "freerdp-server-proxy", "freerdp-server-shadow" ]
